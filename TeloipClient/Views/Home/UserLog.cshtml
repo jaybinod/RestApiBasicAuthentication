@@ -1,0 +1,50 @@
+﻿@model IEnumerable<TeloipClient.Models.UserLog>
+
+@{
+    ViewBag.Title = "UserLog";
+}
+
+<h2>UserLog</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Action)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActionDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OldData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewData)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Action)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActionDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OldData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewData)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2><b>Web Api for Teloip Assessment</b></h2>
+    <p class="lead">This Api Developped to get user details from server through API after sucessfully Authentication. Here I have implemented Basic Authentication so for every request It will first verify user details and if that is ok then only API will return status code OK with data as required otherwise it will return unauthorised access</p>
+
+    <p>To access the web API method, we have to pass the user credentials in the request header.</p>
+    <p>This is complete API presentation of Rest API with Client module. Rest Api develop in Separate Project TeloipWebApi, this project is only for API and another project added here is client side project TeloipClient. In TeloipClient project I am doing all activity related with client like first it will ask to input Email address as user id and password. Tt will go to server and will verify details, if it's pass then it will create session of userid and password which is passing in API header everytime definded in repository class</p>
+
+</div>
