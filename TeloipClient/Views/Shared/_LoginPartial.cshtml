@@ -1,0 +1,21 @@
+﻿@*@model MVCIssueTracker.Models.DisplayUserDetails*@
+
+
+@using (Html.BeginForm("LogOff", "Home", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+{
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+@if (Session["User"] != null)
+{
+        <li>          
+            @Html.ActionLink("Hello " + Session["User"].ToString() + " !", "", "", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </li>
+        <li>@Html.ActionLink("Log off", "Logoff", "Home")</li>
+}
+else
+{
+    <li>@Html.ActionLink("Login", "Login", "Home")</li>
+}
+    </ul>
+}

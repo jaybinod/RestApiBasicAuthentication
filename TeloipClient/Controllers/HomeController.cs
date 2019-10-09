@@ -56,7 +56,14 @@ namespace TeloipClient.Controllers
 
             
         }
-        
+
+        public ActionResult LogOff()
+        {
+            Session["User"] = null;
+            Session["Pwd"] = null;
+            return RedirectToAction("Login", "Home");
+        }
+
         public ActionResult UserList()
         {
             try
