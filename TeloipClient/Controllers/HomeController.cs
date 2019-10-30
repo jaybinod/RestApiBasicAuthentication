@@ -34,6 +34,8 @@ namespace TeloipClient.Controllers
             {
                 string usrpwd = model.Email + ":" + model.Password;
                 HttpResponseMessage response = serviceObj.GetResponse("api/Account?userpassword=" + usrpwd);
+                ////api / RestApi ? userpassword ={ userpassword}
+                //HttpResponseMessage response = serviceObj.GetResponse("api/RestApi?userpassword=" + usrpwd);
                 response.EnsureSuccessStatusCode();
                 if (response.IsSuccessStatusCode)
                 {
@@ -48,7 +50,7 @@ namespace TeloipClient.Controllers
                     return View(model);
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 ViewBag.Title = "User Not Found";
                 return View();
