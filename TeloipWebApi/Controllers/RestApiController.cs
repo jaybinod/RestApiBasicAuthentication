@@ -83,7 +83,7 @@ namespace TeloipWebApi.Controllers
 
                         //Update Log
                         log.Action = "CreateNewUserwithID=" + user.Id;
-                        log.NewData = user.FirstName + "|" + user.LastName + "|" + user.EmailAddress + "|" + user.ActiveStatus + "|" + user.LockStatus;
+                        log.NewData = "FirstName: \""+user.FirstName + "\"|" + "LastName: \""+user.LastName + "\"|" + "EmailAddress: \""+user.EmailAddress + "\"|" + "ActiveStatus: "+user.ActiveStatus + "|" + "LockStatus: "+user.LockStatus;
                         log.OldData = "";
                         UpdateLog(log);
 
@@ -124,7 +124,8 @@ namespace TeloipWebApi.Controllers
                         }
                         else
                         {
-                            log.OldData = entity.FirstName + "|" + entity.LastName + "|" + entity.EmailAddress + "|" + entity.ActiveStatus + "|" + entity.LockStatus;
+                            
+                            log.OldData = "FirstName: \""+entity.FirstName + "\"|" + "LastName: \""+entity.LastName + "\"|" + "EmailAddress: \""+entity.EmailAddress + "\"|" + "ActiveStatus: "+entity.ActiveStatus + "|" + "LockStatus: "+entity.LockStatus;
                             entity.FirstName = user.FirstName;
                             entity.LastName = user.LastName;
                             entity.EmailAddress = user.EmailAddress;
@@ -136,7 +137,8 @@ namespace TeloipWebApi.Controllers
 
                             //Update Log
                             log.Action = "UpdateUser" + entity.Id;
-                            log.NewData = entity.FirstName + "|" + entity.LastName + "|" + entity.EmailAddress + "|" + entity.ActiveStatus + "|" + entity.LockStatus;
+                            
+                            log.NewData = "FirstName: \""+entity.FirstName + "\"|" + "LastName: \""+entity.LastName + "\"|" + "EmailAddress: \""+entity.EmailAddress + "\"|" + "ActiveStatus: "+entity.ActiveStatus + "|" + "LockStatus: "+entity.LockStatus;
                             
                             UpdateLog(log);
 
@@ -175,7 +177,8 @@ namespace TeloipWebApi.Controllers
 
                     //Update Log
                     log.Action = "DeleteUser" + entity.Id;
-                    log.OldData = entity.FirstName + "|" + entity.LastName + "|" + entity.EmailAddress + "|" + entity.ActiveStatus + "|" + entity.LockStatus;
+                    
+                    log.OldData = "FirstName: \""+entity.FirstName + "\"|" + "LastName: \""+entity.LastName + "\"|" + "EmailAddress: \""+entity.EmailAddress + "\"|" + "ActiveStatus: "+entity.ActiveStatus + "|" + "LockStatus: "+entity.LockStatus;
                     UpdateLog(log);
 
 
