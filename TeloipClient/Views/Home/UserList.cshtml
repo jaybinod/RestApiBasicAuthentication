@@ -43,8 +43,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.EmailAddress)
         </td>
-        <td>xxxxx
-            @*@Html.DisplayFor(modelItem => item.Password,"xxxxx")*@
+        <td>@for (int i = 0; i < item.Password.Length; i++)
+        {
+            @Html.Raw("\u2022");
+        }
+
+        
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ActiveStatus)
